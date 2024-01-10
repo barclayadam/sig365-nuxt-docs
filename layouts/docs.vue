@@ -6,31 +6,30 @@ const navigation = inject<Ref<NavItem[]>>('navigation')
 
 <template>
   <div>
-    <ul>
-      <li v-for="item in navigation" :key="item.title">
-        {{ item.title }}
+    <div class="column column--sm-4">
+      <div class="side-nav">
+        <div class="sidenav sidenav--accordion">
+          <ul class="sidenav-categories">
+            <li v-for="(item, idx) in navigation" :key="idx" class="sidenav-category is-active">
+              <span class="sidenav-category__link js-sidenav-category-link">{{ item.title }}</span>
 
-        <ul>
-          <li v-for="child in item.children" :key="child.title">
-            <NuxtLink :href="child._path">{{ child.title }}</NuxtLink>
-          </li>
-        </ul>
-      </li>
-    </ul>
+              <ul class="sidenav-sections">
+                <li v-for="(child, cidx) in item.children" :key="cidx" class="sidenav-article">
+                  <NuxtLink class="sidenav-article__link js-sidenav-article-link" :href="child._path">
+                    {{ child.title }}
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-    <main>
+      <a class="btn btn-default sidebar-toggle js-sidebar-toggle" href="#"><i class="fa fa-bars" aria-hidden="true"></i> Open navigation</a>
+    </div>
+
+    <div class="column column--sm-8">
       <slot />
-    </main>
+    </div>
   </div>
-<!--  <UContainer>-->
-<!--    <UPage>-->
-<!--      <template #left>-->
-<!--        <UAside>-->
-<!--          <UNavigationTree :links="mapContentNavigation(navigation)" />-->
-<!--        </UAside>-->
-<!--      </template>-->
-
-<!--      <slot />-->
-<!--    </UPage>-->
-<!--  </UContainer>-->
 </template>

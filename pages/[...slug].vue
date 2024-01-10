@@ -45,9 +45,31 @@ const links = computed(() => [toc?.bottom?.edit && {
 
 <template>
   <div>
-    {{ page.title }}
+    <article class="article clearfix" itemscope="" itemtype="http://schema.org/Article">
+      <header class="article-header">
+        <h1 class="article__title" itemprop="name">
+          {{ page.title }}
+        </h1>
+      </header>
 
-    <ContentRenderer v-if="page.body" :value="page" />
+      <div class="article__body markdown" itemprop="articleBody">
+        <ContentRenderer v-if="page.body" :value="page" />
+      </div>
+
+      <div class="article-meta">
+<!--        <div class="article-meta__col article-meta__col&#45;&#45;main">-->
+<!--          <div class="entry-info">-->
+<!--            <div class="entry-info__content">-->
+<!--              <div class="meta">Modified on: 17 Nov 2021</div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+        <div v-if="surround[0]">Previous: <NuxtLink :to="surround[0]._path">{{surround[0].title}}</NuxtLink></div>
+        <div v-if="surround[1]">Next: <NuxtLink :to="surround[1]._path">{{surround[1].title}}</NuxtLink></div>
+      </div>
+    </article>
+
 <!--    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />-->
 
 <!--    <UPageBody prose>-->
