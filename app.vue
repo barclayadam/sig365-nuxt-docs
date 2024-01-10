@@ -33,18 +33,18 @@ provide('navigation', navigation)
   <div>
     <Header />
 
-    <UMain>
+    <main>
       <NuxtLayout>
         <NuxtPage />
       </NuxtLayout>
-    </UMain>
+    </main>
 
     <Footer />
 
-    <ClientOnly>
-      <LazyUDocsSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
+<!--    <ClientOnly>-->
+<!--      <LazyUDocsSearch :files="files" :navigation="navigation" />-->
+<!--    </ClientOnly>-->
 
-    <UNotifications />
+<!--    <UNotifications />-->
   </div>
 </template>

@@ -33,7 +33,7 @@ defineOgImage({
   description: page.value.description
 })
 
-const headline = computed(() => findPageHeadline(page.value))
+const headline = computed(() => 'Headline 1') // findPageHeadline(page.value))
 
 const links = computed(() => [toc?.bottom?.edit && {
   icon: 'i-heroicons-pencil-square',
@@ -44,27 +44,30 @@ const links = computed(() => [toc?.bottom?.edit && {
 </script>
 
 <template>
-  <UPage>
-    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />
+  <div>
+    {{ page.title }}
 
-    <UPageBody prose>
-      <ContentRenderer v-if="page.body" :value="page" />
+    <ContentRenderer v-if="page.body" :value="page" />
+<!--    <UPageHeader :title="page.title" :description="page.description" :links="page.links" :headline="headline" />-->
 
-      <hr v-if="surround?.length">
+<!--    <UPageBody prose>-->
+<!--      <ContentRenderer v-if="page.body" :value="page" />-->
 
-      <UDocsSurround :surround="surround" />
-    </UPageBody>
+<!--      <hr v-if="surround?.length">-->
 
-    <template v-if="page.toc !== false" #right>
-      <UDocsToc :title="toc?.title" :links="page.body?.toc?.links">
-        <template v-if="toc?.bottom" #bottom>
-          <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">
-            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
+<!--      <UDocsSurround :surround="surround" />-->
+<!--    </UPageBody>-->
 
-            <UPageLinks :title="toc.bottom.title" :links="links" />
-          </div>
-        </template>
-      </UDocsToc>
-    </template>
-  </UPage>
+<!--    <template v-if="page.toc !== false" #right>-->
+<!--      <UDocsToc :title="toc?.title" :links="page.body?.toc?.links">-->
+<!--        <template v-if="toc?.bottom" #bottom>-->
+<!--          <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">-->
+<!--            <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />-->
+
+<!--            <UPageLinks :title="toc.bottom.title" :links="links" />-->
+<!--          </div>-->
+<!--        </template>-->
+<!--      </UDocsToc>-->
+<!--    </template>-->
+  </div>
 </template>

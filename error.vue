@@ -30,20 +30,22 @@ provide('navigation', navigation)
   <div>
     <Header />
 
-    <UMain>
-      <UContainer>
-        <UPage>
-          <UPageError :error="error" />
-        </UPage>
-      </UContainer>
-    </UMain>
+    <main>
+      {{ error }}
+
+<!--      <UContainer>-->
+<!--        <UPage>-->
+<!--          <UPageError :error="error" />-->
+<!--        </UPage>-->
+<!--      </UContainer>-->
+    </main>
 
     <Footer />
 
-    <ClientOnly>
-      <LazyUDocsSearch :files="files" :navigation="navigation" />
-    </ClientOnly>
+<!--    <ClientOnly>-->
+<!--      <LazyUDocsSearch :files="files" :navigation="navigation" />-->
+<!--    </ClientOnly>-->
 
-    <UNotifications />
+<!--    <UNotifications />-->
   </div>
 </template>

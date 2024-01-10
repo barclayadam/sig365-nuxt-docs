@@ -1,23 +1,19 @@
 <script setup lang="ts">
-const { footer } = useAppConfig()
+const {footer} = useAppConfig()
 </script>
 
 <template>
-  <UFooter>
-    <template #left>
-      {{ footer.credits }}
-    </template>
+  <div>
+    {{ footer.credits }}
 
-    <template #right>
-      <UColorModeButton v-if="footer?.colorMode" />
+    <!-- <UColorModeButton v-if="footer?.colorMode" />-->
 
-      <template v-if="footer?.links">
-        <UButton
-          v-for="(link, index) of footer?.links"
-          :key="index"
-          v-bind="{ color: 'gray', variant: 'ghost', ...link }"
-        />
-      </template>
+    <template v-if="footer?.links">
+      <a
+        v-for="(link, index) of footer?.links"
+        :key="index"
+        v-bind="{ color: 'gray', variant: 'ghost', ...link }"
+      />
     </template>
-  </UFooter>
+  </div>
 </template>
