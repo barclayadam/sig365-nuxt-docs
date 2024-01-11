@@ -7,27 +7,27 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-og-image'
   ],
-  hooks: {
-    // Define `@nuxt/ui` components as global to use them in `.md` (feel free to add those you need)
-    'components:extend': (components) => {
-      // const globals = components.filter((c) => ['UButton'].includes(c.pascalName))
-      //
-      // globals.forEach((c) => c.global = true)
-    }
+
+  content: {
+    markdown: {
+      anchorLinks: false,
+    },
   },
   // force module initialization on dev env
   studio: {
     enabled: true
   },
+
   // Fonts
   fontMetrics: {
-    fonts: ['DM Sans']
+    fonts: ['Poppins']
   },
+
   googleFonts: {
     display: 'swap',
     download: true,
     families: {
-      'DM+Sans': [400, 500, 600, 700]
+      Poppins: [400, 600]
     }
   },
   routeRules: {

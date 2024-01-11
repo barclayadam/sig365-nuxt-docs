@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import '~/assets/css.css'
-import '~/assets/font-awesome.min.css'
-import '~/assets/github.min.css'
-import '~/assets/magnific-popup.css'
 import '~/assets/theme.css'
 
 import type {ParsedContent} from '@nuxt/content/dist/runtime/types'
@@ -36,14 +32,12 @@ provide('navigation', navigation)
 </script>
 
 <template>
-  <div>
+  <div class="layout">
     <Header/>
 
-    <main class="layout__content layout__content--solutions">
-      <NuxtLayout>
-        <NuxtPage/>
-      </NuxtLayout>
-    </main>
+    <NuxtLayout>
+      <NuxtPage/>
+    </NuxtLayout>
 
     <Footer/>
 
