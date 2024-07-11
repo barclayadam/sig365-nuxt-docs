@@ -30,16 +30,10 @@ const route = useRoute()
             <div class="column column--sm-8">
               <ol class="breadcrumbs">
                 <li>
-                  <a href="/support/home">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li title="Solution home">
-                  <a href="/support/solutions">Solution home</a>
-                </li>
-                <li title="Deployment">
-                  <a href="/support/solutions/1000133776">Deployment</a>
-                </li>
-                <li title="Microsoft 365">
-                  <a href="/support/solutions/folders/1000236704">Microsoft 365</a>
+                  <a href="/">Solution home</a>
                 </li>
               </ol>
             </div>
