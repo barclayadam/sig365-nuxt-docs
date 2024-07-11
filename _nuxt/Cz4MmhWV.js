@@ -1,0 +1,1 @@
+import{l as o,c as t,e as s,N as r}from"./DDY3UWCr.js";const c={},l={style:{border:"1px solid black"}};function a(e,n){return t(),s("div",l,[r(e.$slots,"default")])}const _=o(c,[["render",a]]);export{_ as default};

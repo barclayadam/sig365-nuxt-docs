@@ -1,0 +1,1 @@
+import{l as n,c as s,e as t,N as a,f as o}from"./DDY3UWCr.js";const c={},r={class:"callout callout--warning"},l=o("h4",null,"Warning",-1);function _(e,d){return s(),t("div",r,[l,a(e.$slots,"default")])}const f=n(c,[["render",_]]);export{f as default};
