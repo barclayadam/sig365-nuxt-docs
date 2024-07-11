@@ -13,6 +13,7 @@ export default defineNuxtConfig({
       anchorLinks: false,
     },
   },
+
   // force module initialization on dev env
   studio: {
     enabled: true
@@ -30,10 +31,15 @@ export default defineNuxtConfig({
       Poppins: [400, 600]
     }
   },
+
   routeRules: {
     '/api/search.json': { prerender: true },
   },
+
   // Devtools / Typescript
   devtools: { enabled: true },
-  typescript: { strict: false }
+
+  typescript: { strict: false },
+
+  compatibilityDate: '2024-07-11'
 })
